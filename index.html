@@ -1,45 +1,268 @@
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Coworking Space">
-    <meta name="description" content="">
-    <title>ICT HAMI</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="index.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 7.13.4, nicepage.com">
-    
-    <style>
-		body {
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NetPro Solutions — قالب یک صفحه‌ای</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6fbff;
+      --card:#ffffff;
+      --primary:#1e7ef6;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.7);
+      --radius:14px;
+      --maxw:1080px;
+      --shadow: 0 8px 30px rgba(26,46,80,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Vazirmatn', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background:linear-gradient(180deg,var(--bg),#eef6ff);
+      color:#0f1724;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      direction:rtl;
+    }
+    .container{max-width:var(--maxw);margin:40px auto;padding:24px;}
 
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 8px;background:transparent}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:48px;height:48px;background:linear-gradient(180deg,var(--primary),#3ea0ff);border-radius:10px;display:grid;place-items:center;color:white;font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;align-items:center}
+    nav a{color:rgba(15,23,36,0.8);text-decoration:none;font-weight:600}
+    .cta{background:var(--primary);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 6px 20px rgba(30,126,246,0.18)}
 
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px;background:transparent}
+    .hero .title{font-size:36px;font-weight:700;margin:0 0 12px}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .buttons{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;border:1px solid transparent;text-decoration:none;display:inline-block}
+    .btn.secondary{background:white;border-color:#eef3ff}
 
- 
-}
-	</style>
-    
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Oswald:wght@200;300;400;500;600;700">
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
-    <meta name="theme-color" content="#038cb6">
-    <meta property="og:title" content="Page 10">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body class="u-body u-clearfix u-xl-mode" data-lang="en">
-    <section class="u-align-right u-clearfix u-container-align-right u-image u-shading u-section-1" id="carousel_47a5">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-custom-font u-font-oswald u-text u-text-palette-2-base u-title u-text-1">Network Solutions</h1>
-        <p class="u-text u-text-body-alt-color u-text-2">ou’ll benefit from having all of your domains and web services in one place with our streamlined online dashboard and our 24/7 phone and email support.</p>
+    .hero-illus{background:linear-gradient(180deg,#ffffff, #f7fbff);border-radius:18px;padding:28px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:40px 0}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 24px rgba(12,20,40,0.04);text-align:center}
+    .card .icon{width:56px;height:56px;margin:0 auto 12px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(180deg,rgba(30,126,246,0.06),rgba(62,160,255,0.04))}
+    .card h4{margin:6px 0 8px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Projects */
+    .projects{margin:28px 0}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{padding:20px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:var(--shadow);text-align:center}
+    .project img{max-width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+
+    /* Why us */
+    .why{margin:36px 0;padding:22px;border-radius:12px;background:linear-gradient(180deg,#fff,#f7fbff);display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .why ul{display:flex;gap:18px;list-style:none;padding:0;margin:0}
+    .why li{display:flex;align-items:center;gap:8px;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{margin:36px 0}
+    .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    /* Contact */
+    .contact{margin:36px 0;display:grid;grid-template-columns:1fr 380px;gap:18px}
+    form{background:var(--card);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+    label{font-weight:600;font-size:14px}
+    input,textarea{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #e6eefc;background:#fbfdff}
+    button[type=submit]{background:var(--primary);color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700}
+
+    /* Footer */
+    footer{margin:48px 0 12px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr 320px}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .test-grid{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+    }
+    @media (max-width:680px){
+      .hero{grid-template-columns:1fr;text-align:center}
+      header nav{display:none}
+      header{padding:8px}
+      .services{grid-template-columns:1fr}
+      .projects-grid{grid-template-columns:1fr}
+      .test-grid{grid-template-columns:1fr}
+      .container{padding:16px;margin:20px auto}
+      .logo .mark{width:40px;height:40px}
+      .hero .title{font-size:28px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">N</div>
+        <div>
+          <div style="font-weight:700">NetPro</div>
+          <div style="font-size:12px;color:var(--muted)">راهکارهای شبکه و زیرساخت</div>
+        </div>
       </div>
-    </section>
-    
-    
-    
+      <nav>
+        <ul>
+          <li><a href="#services">خدمات</a></li>
+          <li><a href="#projects">پروژه‌ها</a></li>
+          <li><a href="#why">چرا ما</a></li>
+          <li><a href="#contact">تماس</a></li>
+          <li><a class="cta" href="#contact">درخواست مشاوره</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  
-</body></html>
+    <main>
+      <section class="hero" aria-label="hero">
+        <div>
+          <h1 class="title">طراحی و اجرای راهکارهای شبکه، از ایده تا پشتیبانی کامل</h1>
+          <p class="lead">مشاوره، طراحی، پیاده‌سازی، نظارت و پشتیبانی — همراه شما در تمام مراحل.</p>
+          <div class="buttons">
+            <a class="btn cta" href="#contact">شروع کنید</a>
+            <a class="btn secondary" href="#projects">نمونه پروژه‌ها</a>
+          </div>
+        </div>
+
+        <div class="hero-illus" aria-hidden="true">
+          <!-- simple isometric-ish SVG illustration -->
+          <svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="40" width="90" height="110" rx="8" fill="#fff" stroke="#e6f0ff"/>
+            <rect x="45" y="55" width="60" height="16" rx="4" fill="#eaf6ff"/>
+            <rect x="45" y="80" width="60" height="16" rx="4" fill="#eaf6ff"/>
+            <rect x="45" y="105" width="60" height="16" rx="4" fill="#eaf6ff"/>
+            <rect x="150" y="90" width="120" height="72" rx="10" fill="#fff" stroke="#e6f0ff"/>
+            <rect x="170" y="108" width="80" height="40" rx="6" fill="#eaf6ff"/>
+            <rect x="200" y="50" width="80" height="50" rx="6" fill="#fff" stroke="#e6f0ff"/>
+            <path d="M120 160 L200 160" stroke="#e6f0ff" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+          </svg>
+        </div>
+      </section>
+
+      <section id="services" class="services" aria-label="services">
+        <div class="card">
+          <div class="icon">🔍</div>
+          <h4>مشاوره شبکه</h4>
+          <p>تحلیل نیاز و طراحی راهکار مناسب سازمانی و شرکتی.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧩</div>
+          <h4>طراحی و پیاده‌سازی</h4>
+          <p>اجرای استانداردهای طراحی تا نصب و کانفیگ تجهیزات.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h4>نظارت و امنیت</h4>
+          <p>نظارت لحظه‌ای، تحلیل لاگ و پیشنهادات امنیتی.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h4>پشتیبانی 24/7</h4>
+          <p>پاسخگویی سریع و SLA قابل قرارداد برای شبکه‌ها.</p>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h3 style="text-align:center;margin-bottom:18px">نمونه پروژه‌ها</h3>
+        <div class="projects-grid">
+          <div class="project">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%23eef6ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%231e7ef6' font-size='20' font-family='Vazirmatn'>پروژه A</text></svg>" alt="project A">
+            <h4>پیاده‌سازی شبکه سازمانی</h4>
+            <p class="muted">راه‌اندازی شبکه، فایروال و پایش شبکه برای شرکت X.</p>
+          </div>
+          <div class="project">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%23eef6ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%231e7ef6' font-size='20' font-family='Vazirmatn'>پروژه B</text></svg>" alt="project B">
+            <h4>طراحی دیتاسنتر کوچک</h4>
+            <p class="muted">طراحی رک‌ها، کولینگ و پیاده‌سازی VLAN و ذخیره‌سازی.</p>
+          </div>
+          <div class="project">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='200'><rect width='100%' height='100%' fill='%23eef6ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%231e7ef6' font-size='20' font-family='Vazirmatn'>پروژه C</text></svg>" alt="project C">
+            <h4>نظارت و نگهداری شبکه</h4>
+            <p class="muted">نصب سیستم‌های مانیتورینگ و گزارش‌گیری دوره‌ای.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" class="why" aria-label="why-us">
+        <div style="font-weight:700">چرا NetPro؟</div>
+        <ul>
+          <li>✔ تیم متخصص و گواهی‌نامه‌دار</li>
+          <li>✔ SLA و پشتیبانی 24/7</li>
+          <li>✔ طراحی مقیاس‌پذیر</li>
+          <li>✔ تجربه در پروژه‌های سازمانی</li>
+        </ul>
+      </section>
+
+      <section class="testimonials">
+        <h3 style="text-align:center;margin-bottom:18px">نظرات مشتریان</h3>
+        <div class="test-grid">
+          <div class="card"> <strong>شرکت الف</strong><p class="muted">"پشتیبانی سریع و دقیق؛ تیم حرفه‌ای"</p></div>
+          <div class="card"> <strong>شرکت ب</strong><p class="muted">"مشاوره تخصصی و طراحی اصولی"</p></div>
+          <div class="card"> <strong>شرکت ج</strong><p class="muted">"اجرای پروژه در زمان و کیفیت مورد انتظار"</p></div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact" aria-label="contact">
+        <form onsubmit="submitForm(event)">
+          <h3>درخواست مشاوره</h3>
+          <label for="name">نام و نام خانوادگی</label>
+          <input id="name" name="name" placeholder="مثلاً: علی رضایی" required>
+          <label for="email">ایمیل یا شماره</label>
+          <input id="email" name="email" placeholder="Email یا تلفن" required>
+          <label for="message">توضیحات کوتاه</label>
+          <textarea id="message" name="message" rows="5" placeholder="نیاز یا شرح پروژه" required></textarea>
+          <div style="display:flex;gap:8px;justify-content:flex-start;margin-top:10px">
+            <button type="submit">ارسال درخواست</button>
+            <button type="button" onclick="clearForm()" style="background:#eef6ff;border:none;padding:10px 12px;border-radius:8px">پاک کردن</button>
+          </div>
+        </form>
+
+        <div style="padding:20px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:var(--shadow)">
+          <h4>تماس سریع</h4>
+          <p class="muted">تلفن: <strong>+98 912 000 0000</strong></p>
+          <p class="muted">ایمیل: <strong>info@netpro.example</strong></p>
+          <p class="muted">آدرس: تهران، منطقه نمونه</p>
+          <div style="margin-top:10px">
+            <a href="#" style="text-decoration:none" class="btn secondary">واتساپ</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+     تمامی حقوق محفوظ است
+    </footer>
+  </div>
+
+  <script>
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){alert('لطفاً همه فیلدها را پر کنید.');return}
+      // نمونه: ارسال به سرور (در این قالب فقط شبیه‌سازی)
+      alert('درخواست شما ثبت شد. متشکریم — ' + name);
+      clearForm();
+    }
+    function clearForm(){
+      document.getElementById('name').value='';
+      document.getElementById('email').value='';
+      document.getElementById('message').value='';
+    }
+  </script>
+</body>
+</html>
